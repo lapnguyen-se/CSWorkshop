@@ -1,0 +1,120 @@
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/grid-element/grid-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/timer-days/timer-days.html">
+
+<dom-module id="my-home">
+    <template>
+        <style include="shared-styles">
+            /*To set up some default styles for this element*/
+            :host {
+                display: block;
+                padding: 10px;
+                --google-map-iframe-width: 100%;
+                --google-map-iframe-height: 300px;
+            }
+
+            div#countdownHeader h1{
+                background-color: #efb04b;
+                margin: 0;
+                text-align: center;
+                border: solid black 2px;
+                border-bottom: none;
+            }
+            /* To style the count down clock*/
+            timer-days#countdownClock {
+                /*box-shadow: 2px 4px 4px #333;*/
+                --timer-days-border-color: transparent;
+                --timer-days-hover-background-color: none;
+                --timer-days-font-color: black;
+                --timer-days-hover-font-color: none;
+                --timer-days-font-number-size: 5em;
+                --timer-days-font-text-size: 1em;
+                --timer-days-font-description-size: 1.5em;
+                font-family: 'Share Tech Mono', 'Roboto';
+                word-spacing: 40px;
+                border: solid black 2px;
+            }
+
+            /* To style content of each card*/
+            .card-content {
+                color: white;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            /* This page is devided into different sections*/
+            .section {
+                margin-top: 10px;
+            }
+
+            /* To set the width and the height of the map*/
+            paper-card iframe {
+                width: var(--google-map-iframe-width);
+                height: var(--google-map-iframe-height);
+            }
+
+            /* To help the map to fit into the screen*/
+            paper-card {
+                width: 100%;
+            }
+
+            #recommendation {
+                background-color: black;
+                color: white;
+                height: 300px;
+                text-align: center;
+                font-size: 2rem;
+            }
+        </style>
+
+        <div id="countdownHeader">
+            <h1>Join us for 3 days trial</h1>
+        </div>
+        <!--COUNTDOWN TIMER-->
+        <timer-days id="countdownClock" target-date="2018-09-13T16:40:00"></timer-days>
+
+        <!--CHOICES-->
+        <div id="choices" class="section">
+            <grid-element ghi gs="10px">
+                <grid-col>
+                    <a data-route="home" href="{{baseUrl}}software">
+                        <paper-card style="background-color: #455a64;" fade-image image="images/programming.png">
+                            <div class="card-content">Software Project</div>
+                        </paper-card>
+                    </a>
+                </grid-col>
+                <grid-col>
+                    <a data-route="home" href="{{baseUrl}}hardware">
+                        <paper-card style="background-color: #303f9f;" fade-image image="images/arduinos.png">
+                            <div class="card-content">Hardware Project (coming soon)</div>
+                        </paper-card>
+                    </a>
+                </grid-col>
+                <grid-col>
+                    <a data-route="home" href="{{baseUrl}}registration">
+                        <paper-card style="background-color: #558b2f;" fade-image image="images/registration.png">
+                            <div class="card-content">Registration</div>
+                        </paper-card>
+                    </a>
+                </grid-col>
+            </grid-element>
+        </div>
+
+        <!--CREDIT-->
+        <div id="credit" class="section">
+            <hr>
+            <p style="color: gray; text-align: center;">
+                Copyright &copy; Created April 2018
+            </p>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-home',
+        });
+    </script>
+</dom-module>

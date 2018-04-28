@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="tutorial-viewer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-software">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+
+    <tutorial-viewer url="https://raw.githubusercontent.com/SwinCompSciEducation/cave-escape/master/Documentation/data.json"> </tutorial-viewer>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-software',
+    });
+  </script>
+</dom-module>

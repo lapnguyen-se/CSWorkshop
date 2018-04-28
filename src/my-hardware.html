@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-hardware">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+                padding: 10px;
+            }
+        </style>
+
+        <div class="card">
+            <h1>HARDWARE PROJECT is coming.</h1> <a href="[[rootPath]]software">Head to SOFTWARE PROJECT.</a>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-hardware',
+        });
+    </script>
+</dom-module>
